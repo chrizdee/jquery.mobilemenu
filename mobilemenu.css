@@ -1,0 +1,7 @@
+.mobilemenu { position: relative; z-index: 99999; background: #222; color: #fff; padding: 10px 10px 10px 0; }
+.mobilemenu a, .mobilemenu a:active, .mobilemenu a:visited { color: #fff; text-decoration: none; }
+.mobilemenu a:hover { color: #f10; }
+.mobilemenu .mobilemenu-bar { text-align: right; }
+.mobilemenu ul { margin: 0; padding: 0 0 0 10px; }
+.mobilemenu li a { padding: 8px 0; border-bottom: 1px solid #999; display: block; }
+.mobilemenu li.last a { border: 0; }
