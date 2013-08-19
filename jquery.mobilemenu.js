@@ -51,7 +51,7 @@
             }
             
             if ( (navigator.userAgent.match(/MSIE 8/i)) || (navigator.userAgent.match(/MSIE 7/i)) ) {
-            	// add scrollbar for IE7 & 8 to stop breaking resize function on small content sites
+                // add scrollbar for IE7 & 8 to stop breaking resize function on small content sites
                 jQuery('html').css("overflow-y" , "scroll");
             }
             
@@ -61,9 +61,9 @@
             // re-instate original nav (and call this on window.width functions)
             function showDesktopMenu() 
             {
-            	jQuery('.mobilemenu').hide();
+                jQuery('.mobilemenu').hide();
                 jQuery(desktopMenu).show();
-            	menuOn = false;
+                menuOn = false;
             }
             
             // generate mobile nav
@@ -77,6 +77,9 @@
                 var menuContents = jQuery(desktopMenu).html();
                 jQuery('.mobilemenu-nav').html(menuContents);
                 
+                // remove all items with class "hide_on_mobile"
+                jQuery('nav.mobilemenu-nav .hide_on_mobile').remove();
+
                 // remove all classes from everthing inside mobile nav
                 if(removeAttrs) {
                     jQuery('nav.mobilemenu-nav .invisible').remove();
@@ -120,8 +123,8 @@
                     jQuery(".mobilemenu").show();
                     
                 } else {
-                	showDesktopMenu();
-                }	
+                    showDesktopMenu();
+                }   
             } 
             
             function checkWindowSize()
@@ -147,9 +150,9 @@
             }
 
 
-       		// adjust menu positioning on centered navigation     
+            // adjust menu positioning on centered navigation     
             window.onorientationchange = function() {
-            	checkWindowSize();
+                checkWindowSize();
             }
            
            // run main function on load
