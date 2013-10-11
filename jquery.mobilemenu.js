@@ -28,7 +28,8 @@
             screenWidth: 480,
             showButtonLabel: "Show navigation",
             hideButtonLabel: "Hide navigation",
-            removeAttrs: false
+            removeAttrs: false,
+            scrollBodyTop: false
         };
         var options = $.extend(defaults, options);
         
@@ -41,6 +42,7 @@
             var showButtonLabel = options.showButtonLabel;
             var hideButtonLabel = options.hideButtonLabel;
             var removeAttrs = options.removeAttrs;
+            var scrollBodyTop = options.scrollBodyTop;
 
             // get current windows width
             var currentWidth = window.innerWidth || document.documentElement.clientWidth;
@@ -102,6 +104,7 @@
                 jQuery($navreveal).click(function(e) {
                     e.preventDefault();
                     if(menuOn == false) {
+                        if(scrollBodyTop == true) jQuery('html, body').animate({ scrollTop: 0 }, 600);
                         jQuery('.mobilemenu-nav ul:first').slideDown();
                         jQuery($navreveal).text(hideButtonLabel);
                         menuOn = true;
